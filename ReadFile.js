@@ -16,3 +16,5 @@ readNewFile('test.txt').then((fileContent)=>{
     console.log(fileContent);
 });
 
+// https://dev.to/maheshkay/read-csv-file-using-node-js-29oc
+
