@@ -9,7 +9,7 @@ class HotelController {
         let testHotel = {
             name: 'lakewood',
             classification: 3,
-            workdaysValue: {
+            workDaysValue: {
                 regular: 110,
                 rewards: 80
             },
@@ -17,14 +17,14 @@ class HotelController {
                 'regular': 90,
                 'rewards': 80
             }
-
+             
         }
         this.createHotel(testHotel);
 
         testHotel = {
             name: 'bridgewood',
             classification: 3,
-            workdaysValue: {
+            workDaysValue: {
                 regular: 160,
                 rewards: 110
             },
@@ -40,7 +40,7 @@ class HotelController {
         testHotel = {
             name: 'ridgewood',
             classification: 3,
-            workdaysValue: {
+            workDaysValue: {
                 regular: 220,
                 rewards: 100
             },
@@ -54,10 +54,9 @@ class HotelController {
 
     }
    
-    createHotel({ name, classification, workweekDaysTax, weekendDays }) {
-       
-    
-        let hotel = new Hotel(name, classification, workweekDaysTax, weekendDays);
+    createHotel({ name, classification, workDaysValue, weekendDaysValue }) {
+  
+        let hotel = new Hotel(name, classification, workDaysValue, weekendDaysValue);
 
         this.hotelList.push(hotel);
          

@@ -1,11 +1,11 @@
 class Hotel{
 
-    constructor(name, classification, workDaysValue, weekDaysValue){
+    constructor(name, classification, workDaysValue, weekendDaysValue){
     
         this.name = name;
         this.classification = classification;
         this.workDaysValue = workDaysValue;
-        this.weekDaysValue =  weekDaysValue;
+        this.weekendDaysValue =  weekendDaysValue;
 
        
     }
