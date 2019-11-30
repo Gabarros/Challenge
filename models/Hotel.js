@@ -1,10 +1,12 @@
-export default class Hotel{
+class Hotel{
 
-    constructor(name, classification, workweekDaysTax, weekendDays){
+    constructor(name, classification, workDaysValue, weekDaysValue){
 
         this.name = name;
         this.classification = classification;
-        this.workweekDaysTax = workweekDaysTax;
-        this.weekendDays = weekendDays;
+        this.workDaysValue = workDaysValue;
+        this.weekDaysValue =  weekDaysValue;
     }
 }
+
+module.exports = Hotel;

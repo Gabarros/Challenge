@@ -1,7 +1,12 @@
-export default class Client{
+class Client{
 
-    constructor(clientType, dates) {
+    constructor(clientType, workdays, weekendDays) {
         this.clientType = clientType;
+        this.workdays = workdays;
+        this.weekendDays;
+
     }
 
 }
+
+module.exports = Client;
