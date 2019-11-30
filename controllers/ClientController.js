@@ -8,7 +8,7 @@ class ClientController {
 
         let testClient = {
             clientType: 'regular',
-            workdays: 0,
+            workDays: 0,
             weekendDays: 2
         }
 
@@ -22,18 +22,16 @@ class ClientController {
 
     }
 
-    createClient({clientType, workdays, weekendDays}) {
+    createClient({clientType, workDays, weekendDays}) {
 
         let client = new Client(
             clientType,
-            workdays,
+            workDays,
             weekendDays
         );
 
         this.clientsList.push(client);
     };
-
-
 }
 
 module.exports = ClientController;

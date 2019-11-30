@@ -2,14 +2,9 @@ const ClientController = require('./ClientController');
 const HotelController = require('./HotelController');
 
 let hotelList = new HotelController().hotelList;
+let clientList = new ClientController().clientsList;
 
-// console.log(hotelList);
-
-let testClient = {
-    clientType: 'regular',
-    workdays: 0,
-    weekendDays: 2
-}
+console.log(clientList);
 
 function verifyHotelListCosts(client, hotelList){
     let hotelIndividualCosts = [];
@@ -26,13 +21,10 @@ function verifyHotelListCosts(client, hotelList){
 
 
 function calculateHotelCost(client, hotel){
-    // console.log('hotel cost', hotel);
 
     let type = client.clientType;
 
-   
-
-    let workDaysTotal = client.workdays * hotel.workDaysValue[type];
+    let workDaysTotal = client.workDays * hotel.workDaysValue[type];
     
     let weekendDaysTotal = client.weekendDays * hotel.weekendDaysValue[type];
 
@@ -68,7 +60,7 @@ function compareHotelCosts(hotelCostsList){
 
 }
 
-let hotelCostsList = verifyHotelListCosts(testClient, hotelList);
+let hotelCostsList = verifyHotelListCosts(clientList[0], hotelList);
 let betterValue = compareHotelCosts(hotelCostsList);
 console.log(hotelCostsList);
 console.log(betterValue);
