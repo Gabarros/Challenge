@@ -7,9 +7,9 @@ class ClientController {
     constructor(){
 
         let testClient = {
-            clientType: 'regular',
-            workDays: 0,
-            weekendDays: 2
+            clientType: 'rewards',
+            workDays: 8,
+            weekendDays: 4
         }
 
         this.createClient(testClient);

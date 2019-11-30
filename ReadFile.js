@@ -1,3 +1,6 @@
+const ClientController = require('./controllers/ClientController');
+
+
 const fs = require('fs');
 
 function readNewFile(input) {
@@ -10,10 +13,12 @@ function readNewFile(input) {
 
 
 }
-let input = 'test.txt';
+let input = 'file.json';
 
-readNewFile('test.txt').then((fileContent)=>{
-    console.log(fileContent);
+readNewFile(input).then((fileContent)=>{
+
+    let file = JSON.parse(fileContent);
+    console.log(file[0].clientType);
 });
 
 // https://dev.to/maheshkay/read-csv-file-using-node-js-29oc
