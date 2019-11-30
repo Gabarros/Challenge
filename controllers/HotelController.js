@@ -14,8 +14,8 @@ class HotelController {
                 rewards: 80
             },
             weekendDaysValue: {
-                'regular': 90,
-                'rewards': 80
+                regular: 90,
+                rewards: 80
             }
              
         }
@@ -23,14 +23,14 @@ class HotelController {
 
         testHotel = {
             name: 'bridgewood',
-            classification: 3,
+            classification: 4,
             workDaysValue: {
                 regular: 160,
                 rewards: 110
             },
             weekendDaysValue: {
-                'regular': 60,
-                'rewards': 50
+                regular: 60,
+                rewards: 50
             }
 
         }
@@ -39,14 +39,14 @@ class HotelController {
 
         testHotel = {
             name: 'ridgewood',
-            classification: 3,
+            classification: 5,
             workDaysValue: {
                 regular: 220,
                 rewards: 100
             },
             weekendDaysValue: {
-                'regular': 150,
-                'rewards': 40
+                regular: 150,
+                rewards: 40
             }
 
         }

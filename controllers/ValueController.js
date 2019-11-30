@@ -7,7 +7,7 @@ let hotelList = new HotelController().hotelList;
 
 let testClient = {
     clientType: 'regular',
-    workdays: 5,
+    workdays: 0,
     weekendDays: 2
 }
 
@@ -40,6 +40,7 @@ function calculateHotelCost(client, hotel){
 
     let hotelCost = {
         name: hotel.name,
+        classification: hotel.classification,
         total
     }
     return hotelCost;
@@ -47,14 +48,27 @@ function calculateHotelCost(client, hotel){
 }
 
 function compareHotelCosts(hotelCostsList){
-    let betterValue = new Object();
-    for(let i of hotels){
+    let betterValue = new Object;
+    betterValue = hotelCostsList[0];
+
+    for(let i of hotelCostsList){
+       
+        if(i.total < betterValue.total){
+            betterValue = i;
+        }else if(i.total == betterValue.total){
+
+            if(i.classification > betterValue.classification){
+                betterValue = i;
+            }
+        }
         
     }
+
+    return betterValue;
 
 }
 
 let hotelCostsList = verifyHotelListCosts(testClient, hotelList);
-// compareHotelCosts(hotelCostsList);
-
-// console.log(hotelCostsList);
+let betterValue = compareHotelCosts(hotelCostsList);
+console.log(hotelCostsList);
+console.log(betterValue);
