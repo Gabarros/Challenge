@@ -1,0 +1,18 @@
+{
+    "0": {
+        "clientType": "regular",
+        "dates": [
+            "16Mar2009",
+            "17Mar2009",
+            "18Mar2009"
+        ]
+    },
+    "1": {
+        "clientType": "regular",
+        "dates": []
+    },
+    "2": {
+        "clientType": "rewards",
+        "dates": []
+    }
+}

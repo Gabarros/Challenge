@@ -1,26 +1,37 @@
 const Client = require('../models/Client');
 
-const clientsList = [];
 
 class ClientController {
+    clientsList = new Array();
 
-    static getClientsList() {
+    constructor(){
+
+        let testClient = {
+            clientType: 'rewards',
+            workDays: 8,
+            weekendDays: 4
+        }
+
+        this.createClient(testClient);
+
+    }
+
+    getClientsList() {
 
         return this.clientsList;
 
     }
 
-    static createClient(clientType, workdays, weekendDays) {
+    createClient({clientType, workDays, weekendDays}) {
+
         let client = new Client(
             clientType,
-            workdays,
+            workDays,
             weekendDays
         );
 
-        clientsList.push(client);
+        this.clientsList.push(client);
     };
-
-
 }
 
 module.exports = ClientController;

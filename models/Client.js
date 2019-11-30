@@ -1,9 +1,9 @@
 class Client{
 
-    constructor(clientType, workdays, weekendDays) {
+    constructor(clientType, workDays, weekendDays) {
         this.clientType = clientType;
-        this.workdays = workdays;
-        this.weekendDays;
+        this.workDays = workDays;
+        this.weekendDays = weekendDays;
 
     }
 

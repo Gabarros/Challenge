@@ -1,7 +1,7 @@
 const Hotel = require('../models/Hotel')
 
 class HotelController {
-    hotelList = [];
+    hotelList = new Array;
    
     constructor() {
         
