@@ -1,10 +1,11 @@
 const Hotel = require('../models/Hotel')
 
 class HotelController {
-
+    hotelList = [];
+   
     constructor() {
-        let hotelsList = [];
-
+        
+        
         let testHotel = {
             name: 'lakewood',
             classification: 3,
@@ -18,8 +19,9 @@ class HotelController {
             }
 
         }
+        this.createHotel(testHotel);
 
-        let testHotel2 = {
+        testHotel = {
             name: 'bridgewood',
             classification: 3,
             workdaysValue: {
@@ -32,8 +34,10 @@ class HotelController {
             }
 
         }
+        this.createHotel(testHotel);
 
-        let testHotel3 = {
+
+        testHotel = {
             name: 'ridgewood',
             classification: 3,
             workdaysValue: {
@@ -46,17 +50,21 @@ class HotelController {
             }
 
         }
+        this.createHotel(testHotel);
+
     }
-
-    static createHotel(name, classification, workweekDaysTax, weekendDays) {
-
+   
+    createHotel({ name, classification, workweekDaysTax, weekendDays }) {
+       
+    
         let hotel = new Hotel(name, classification, workweekDaysTax, weekendDays);
 
-        this.hotelsList.push(hotel);
+        this.hotelList.push(hotel);
+         
     }
 
-    static getHotelsList() {
-        return this.hotelsList;
+    getHotelsList() {
+        return this.hotelList;
     }
 
 
