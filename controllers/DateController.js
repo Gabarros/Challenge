@@ -8,10 +8,12 @@ class DateController{
 
         if(day == 0 || day == 6){
             // Final de semana
-            console.log('Final de semana ')
+            // console.log('Final de semana ')
+            return 1;
         }else{
             // Dia da semana
-            console.log('dia da semana')
+            // console.log('dia da semana')
+            return 0;
         }
 
     }
@@ -19,6 +21,3 @@ class DateController{
 
 module.exports = DateController;
 
-let date = new DateController();
-
-date.verifyDayOfTheWeek("01Dec2019")
