@@ -5,9 +5,7 @@ class Hotel{
         this.name = name;
         this.classification = classification;
         this.workDaysValue = workDaysValue;
-        this.weekendDaysValue =  weekendDaysValue;
-
-       
+        this.weekendDaysValue =  weekendDaysValue;  
     }
 }
 

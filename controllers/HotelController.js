@@ -5,7 +5,6 @@ class HotelController {
    
     constructor() {
         
-        
         let testHotel = {
             name: 'lakewood',
             classification: 3,
@@ -32,10 +31,9 @@ class HotelController {
                 regular: 60,
                 rewards: 50
             }
-
         }
-        this.createHotel(testHotel);
 
+        this.createHotel(testHotel);
 
         testHotel = {
             name: 'ridgewood',
@@ -48,16 +46,14 @@ class HotelController {
                 regular: 150,
                 rewards: 40
             }
-
         }
         this.createHotel(testHotel);
 
     }
-   
+
     createHotel({ name, classification, workDaysValue, weekendDaysValue }) {
   
         let hotel = new Hotel(name, classification, workDaysValue, weekendDaysValue);
-
         this.hotelList.push(hotel);
          
     }
@@ -65,8 +61,6 @@ class HotelController {
     getHotelsList() {
         return this.hotelList;
     }
-
-
 }
 
 module.exports = HotelController;

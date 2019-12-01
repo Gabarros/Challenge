@@ -1,18 +1,9 @@
 const Client = require('../models/Client');
 
-
 class ClientController {
     clientsList = new Array();
 
-    constructor(){
-
-    }
-
-    getClientsList() {
-
-        return this.clientsList;
-
-    }
+    getClientsList() { return this.clientsList; }
 
     createClient({clientType, workDays, weekendDays}) {
 
@@ -22,9 +13,7 @@ class ClientController {
             weekendDays
         );
 
-        this.clientsList.push(client);
-        
-    
+        this.clientsList.push(client);  
     };
 
     receiveNewClients({clientType, workDays, weekendDays}){

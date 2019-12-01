@@ -2,19 +2,13 @@ const fs = require('fs');
 
 class FileReader {
 
-    readNewFile(input) {
+    readNewFile(path) {
         let fileContent;
         return new Promise(function (resolve, reject) {
 
-            fileContent = fs.readFileSync(input, { encoding: 'utf8' });
+            fileContent = fs.readFileSync(path, { encoding: 'utf8' });
             resolve(fileContent);
         });
-
     }
-
 }
-
-
-
 module.exports = FileReader;
-
