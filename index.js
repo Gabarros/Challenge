@@ -11,13 +11,22 @@ function openFile() {
     fileReader.readNewFile(input).then((fileContent) => {
         let clientFiles = JSON.parse(fileContent);
         let clientsNumber = Object.keys(clientFiles).length;
+       
 
         for(let i = 0; i < clientsNumber; i++){
-    
-            let x = verifyDates(clientFiles[i].dates);
-            console.log(x);
+            let client = {
+                clientType:  clientFiles[i].clientType,
+                workDays: verifyDates(clientFiles[i].dates).workDays,
+                weekendDays: verifyDates(clientFiles[i].dates).weekendDays
 
+            }
+           
+            console.log(client);
+            
+            
         }
+        
+
     }).catch(err=>{
         console.error(err);
     });

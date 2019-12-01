@@ -5,8 +5,7 @@ class DateController{
 
         let dateObject = new Date(date);
         let day = dateObject.getDay();
-        // console.log(day);
-
+        
         if(day == 0 || day == 6){
             // Final de semana
             
