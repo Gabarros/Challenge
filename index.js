@@ -2,7 +2,6 @@ const FileReader = require('./FileReader');
 const ClientController = require('./controllers/ClientController');
 const DateController = require('./controllers/DateController');
 
-
 function openFile() {
 
     input = 'file.json';
@@ -11,33 +10,49 @@ function openFile() {
 
     fileReader.readNewFile(input).then((fileContent) => {
         let clientFiles = JSON.parse(fileContent);
+        let clientsNumber = Object.keys(clientFiles).length;
 
-        console.log(clientFiles.length);
-        console.log([...clientFiles]);
-        // for(let files of clientFiles){
+        for(let i = 0; i < clientsNumber; i++){
+    
+            let x = verifyDates(clientFiles[i].dates);
+            console.log(x);
 
-        //     verifyDates(files.dates);
-
-        // }
+        }
     }).catch(err=>{
         console.error(err);
     });
 
 }
 
+function addNewClient(client){
+    let clientController = new ClientController();
+
+    clientController.createClient(client);
+
+}
+
 function verifyDates(dates) {
     let dateController = new DateController();
+    let workDaysCounter = 0;
+    let weekendDaysCounter = 0;
+    let daysCounter = new Array();
 
     for(let date of dates){
-
-        if(dateController.verifyDayOfTheWeek(date)){
-            console.log('Final de semana')
+        if(dateController.verifyDayOfTheWeek(date) == 'workday'){
+            workDaysCounter++;
+            
         }else{
-            console.log('dia da semana')
+           weekendDaysCounter++;
         }
-
-  
+        
     }
+    
+    return({
+        workDays: workDaysCounter, 
+        weekendDays: weekendDaysCounter
+    });
+
+   
 }
 openFile();
 
