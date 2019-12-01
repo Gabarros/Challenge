@@ -9,10 +9,17 @@
     },
     "1": {
         "clientType": "regular",
-        "dates": []
+        "dates": [
+            "20Mar2009",
+            "21Mar2009",
+            "22Mar2009"]
     },
     "2": {
         "clientType": "rewards",
-        "dates": []
+        "dates": [
+            "26Mar2009",
+            "27Mar2009",
+            "28Mar2009"
+        ]
     }
 }
