@@ -16,7 +16,7 @@ function importClients() {
        
 
         for(let i = 0; i < clientsNumber; i++){
-            
+
             let client = {
                 clientType:  clientFiles[i].clientType,
                 workDays: verifyDates(clientFiles[i].dates).workDays,
@@ -51,5 +51,6 @@ function verifyDates(dates) {
         weekendDays: weekendDaysCounter
     });
 }
+
 
 importClients();
