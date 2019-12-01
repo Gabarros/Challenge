@@ -8,7 +8,6 @@ class DateController{
         
         if(day == 0 || day == 6){
             // Final de semana
-            
             return 'weekend';
         }else{
             // Dia da semana

@@ -1,12 +1,15 @@
 const FileReader = require('./FileReader');
 const ClientController = require('./controllers/ClientController');
 const DateController = require('./controllers/DateController');
+const ValueController = require('./controllers/ValueController');
 
-function openFile() {
+
+const clientController = new ClientController();
+let fileReader = new FileReader();
+
+function importClients() {
 
     input = 'file.json';
-
-    let fileReader = new FileReader();
 
     fileReader.readNewFile(input).then((fileContent) => {
         let clientFiles = JSON.parse(fileContent);
@@ -21,22 +24,15 @@ function openFile() {
 
             }
            
-            console.log(client);
-            
-            
+           clientController.receiveNewClients(client);
+           
         }
+        ValueController.processClientList(clientController.getClientsList());
+        console.log()
         
-
     }).catch(err=>{
         console.error(err);
     });
-
-}
-
-function addNewClient(client){
-    let clientController = new ClientController();
-
-    clientController.createClient(client);
 
 }
 
@@ -44,7 +40,6 @@ function verifyDates(dates) {
     let dateController = new DateController();
     let workDaysCounter = 0;
     let weekendDaysCounter = 0;
-    let daysCounter = new Array();
 
     for(let date of dates){
         if(dateController.verifyDayOfTheWeek(date) == 'workday'){
@@ -52,18 +47,17 @@ function verifyDates(dates) {
             
         }else{
            weekendDaysCounter++;
-        }
-        
-    }
-    
+        }    
+    } 
     return({
         workDays: workDaysCounter, 
         weekendDays: weekendDaysCounter
     });
-
-   
 }
-openFile();
+
+importClients();
+
+
 
 
 

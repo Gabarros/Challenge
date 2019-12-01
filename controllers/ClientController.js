@@ -6,14 +6,6 @@ class ClientController {
 
     constructor(){
 
-        let testClient = {
-            clientType: 'rewards',
-            workDays: 8,
-            weekendDays: 4
-        }
-
-        this.createClient(testClient);
-
     }
 
     getClientsList() {
@@ -31,7 +23,15 @@ class ClientController {
         );
 
         this.clientsList.push(client);
+        
+    
     };
+
+    receiveNewClients({clientType, workDays, weekendDays}){
+       
+        this.createClient({clientType, workDays, weekendDays});
+        
+    }
 }
 
 module.exports = ClientController;
